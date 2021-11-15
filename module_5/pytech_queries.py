@@ -10,8 +10,8 @@ info = db.students.find({})
 
 print("--Displaying Students Documents From find() Query--")
 for each in info:
-    print(f'\n Student ID: {each["student_id"]}\nFirst Name: {each["first_name"]}\nLast Name: {each["last_name"]}')
+    print(f'Student ID: {each["student_id"]}\nFirst Name: {each["first_name"]}\nLast Name: {each["last_name"]}\n')
 
 print("--Displaying Student Document From find_one() Query--")
 doc = db.students.find_one({"student_id": "1007"})
-print(f'\nStudent ID: {doc["student_id"]}\nFirst Name: {doc["first_name"]}\nLast Name: {doc["last_name"]}')
+print(f'Student ID: {doc["student_id"]}\nFirst Name: {doc["first_name"]}\nLast Name: {doc["last_name"]}\n')
