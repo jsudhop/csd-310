@@ -115,8 +115,8 @@ steve = {
 }
 
 jenny_student_id = db.students.insert_one(jenny).inserted_id
-print("Inserted student record Jenny Jenny into the students collection with document id " + jenny_student_id)
+print("Inserted student record Jenny Jenny into the students collection with document id ", jenny_student_id)
 francis_student_id = db.students.insert_one(francis).inserted_id
-print("Inserted student record Francis Coppola into the students collection with document id " + francis_student_id)
+print("Inserted student record Francis Coppola into the students collection with document id ", francis_student_id)
 steve_student_id = db.students.insert_one(steve).inserted_id
-print("Inserted student record Steve McDonald into the students collection with document id " + steve_student_id)
+print("Inserted student record Steve McDonald into the students collection with document id ", steve_student_id)
