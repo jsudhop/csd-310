@@ -3,7 +3,7 @@ from mysql.connector import errorcode
 
 config = {
     "user": "jsudhop",
-    "password": "",
+    "password": "thisisapassword",
     "host": "127.0.0.1",
     "database": "pysports",
     "raise_on_warnings": True
