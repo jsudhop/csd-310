@@ -42,7 +42,7 @@ finally:
 
 def validate_user():
     test = True
-    while test == True:
+    while test:
         try:
             print('\n****************************************************************')
 
