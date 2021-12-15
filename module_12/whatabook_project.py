@@ -3,8 +3,9 @@
 #What A Book - Development
 
 #I tried to handle everything i could with the modules just passing the data around as needed. 
+#As far as I recall the only reused code was from myself, though I can't be certain that when I used that code originally it wasn't something I had to look up.
 
-
+#reused all of the stuff related to connecting from earlier assignments
 import mysql.connector
 from mysql.connector import errorcode
 
@@ -40,25 +41,29 @@ finally:
 
 
 def validate_user():
-    try:
-        print('\n****************************************************************')
-        uId = int(input('Please Enter Your User ID: '))
-        cursor.execute('SELECT user_id From user')
-        result = cursor.fetchall()
-        
-        #It didn't work at first, so I used the below line to check what was returning, I saw it was a tuple and then just compared that
-        #print(result)
-        
-        if (uId, ) in result:
-            print('User accepted.')
-            return uId
-        else:
+    test = True
+    while test == True:
+        try:
+            print('\n****************************************************************')
+
+            uId = int(input('Please Enter Your User ID: '))
+            cursor.execute('SELECT user_id From user')
+            result = cursor.fetchall()
+            
+            #It didn't work at first, so I used the below line to check what was returning, I saw it was a tuple and then just compared that
+            #print(result)
+            
+            if (uId, ) in result:
+                print('User accepted.')
+                test = False
+                return uId
+            else:
+                print('Invalid input.  Please try again.')
+                    
+        except ValueError:
             print('Invalid input.  Please try again.')
-            validate_user()
-                
-    except ValueError:
-        print('Invalid input.  Please try again.')
-        validate_user()
+
+
 
 def show_books():
     print('\n****************************************************************')
@@ -117,6 +122,7 @@ def add_book_to_wishlist(uId, bId):
     cursor.execute('INSERT INTO wishlist (user_id, book_id) Values ({}, {})'.format(uId, bId))
     show_account_menu(uId)
 
+#This is the inner account manipulation loop 
 def show_account_menu(uId):
     print('\n****************************************************************')
     cursor.execute('SELECT first_name, last_name FROM user WHERE user_id = {}'.format(uId))
