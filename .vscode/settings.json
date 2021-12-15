@@ -12,6 +12,19 @@
             "database": "pysports",
             "username": "jsudhop",
             "password": "MyDBPassword1"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "whatabook",
+            "username": "whatabook_user",
+            "password": "MySQL8IsGreat!",
+            "database": "whatabook"
         }
     ]
 }
